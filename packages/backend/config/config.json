@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "werren",
+    "password": null,
+    "database": "danspro",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "werren",
+    "password": null,
+    "database": "danspro",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "werren",
+    "password": null,
+    "database": "danspro",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
