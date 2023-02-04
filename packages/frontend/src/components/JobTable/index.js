@@ -19,30 +19,32 @@ const JobTable = (props) => {
 
   return (
     <Grid>
-      {jobs.map((job) => (
-        <Grid className={classes.textContainer}>
-          <Grid>
-            <Typography onClick={() => handleNavigate(job.id)} fontWeight={700} className={classes.jobTitle}>
-              {job.title}
-            </Typography>
-            <Grid className={classes.subCategoryText} gap={1}>
-              <Typography>
-                {job.company} -
+      {jobs.map((job, i) => (
+        job && (
+          <Grid key={i} className={classes.textContainer}>
+            <Grid>
+              <Typography onClick={() => handleNavigate(job.id)} fontWeight={700} className={classes.jobTitle}>
+                {job.title}
               </Typography>
-              <Typography fontWeight={700} className={classes.fullTimeText}>
-                {job.type}
+              <Grid className={classes.subCategoryText} gap={1}>
+                <Typography>
+                  {job.company} -
+                </Typography>
+                <Typography fontWeight={700} className={classes.fullTimeText}>
+                  {job.type}
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid>
+              <Typography>
+                {job.location}
+              </Typography>
+              <Typography className={classes.dateText}>
+                {moment(job.created_at).fromNow()}
               </Typography>
             </Grid>
           </Grid>
-          <Grid>
-            <Typography>
-              {job.location}
-            </Typography>
-            <Typography className={classes.dateText}>
-              {moment(job.created_at).fromNow()}
-            </Typography>
-          </Grid>
-        </Grid>
+        )
       ))}
     </Grid>
   )

@@ -31,11 +31,12 @@ const JoblistPage = () => {
 
   useEffect(() => {
     handleSearch()
-  })
+  }, [])
 
   const handleSearch = async () => {
     try {
       const response = await getJobList({ params: { description, location, full_time: fullTime, page: 1 } })
+      console.log(response, 'haharespon')
       setJobList(response.data.data)
     } catch (err) {
       console.log(err)
